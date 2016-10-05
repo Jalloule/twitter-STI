@@ -1,0 +1,37 @@
+<div class="col-sm-2">
+  <div class="btn-group-vertical" role="group" aria-label="...">
+    <%= link_to 'Timeline', root_path, class: 'btn btn-primary' %>
+    <%= link_to 'My Profile', user_path(current_user), class: 'btn btn-default' %>
+  </div>
+</div>
+
+<div class="col-sm-10">
+  <div class="page-header">
+    <h1>New Notifications</h1>
+  </div>
+  <% if @new_notifications.any? %>
+      <table class="table">
+        <% @new_notifications.each do |notification| %>
+            <tr>
+              <td><%= notification_message(notification) %></td>
+            </tr>
+        <% end %>
+      </table>
+  <% else %>
+      <p>No notifications. Nobody likes you! :)</p>
+  <% end %>
+
+
+  <% if @pending_notifications.any? %>
+      <div class="page-header">
+        <h1>Pending Notifications</h1>
+      </div>
+      <table class="table">
+        <% @pending_notifications.each do |notification| %>
+            <tr>
+              <td><%= notification_message(notification) %></td>
+            </tr>
+        <% end %>
+      </table>
+  <% end %>
+</div>

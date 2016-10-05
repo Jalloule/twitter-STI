@@ -24,7 +24,7 @@ Rails.application.configure do
   # config.log_level = :debug
 
   # Use a different logger for distributed setups
-  config.logger = SyslogLogger.new 'gnup_h'
+  config.logger = SyslogLogger.new '_h'
 
   # Use a different cache store in production
   # config.cache_store = :mem_cache_store
@@ -51,3 +51,4 @@ Rails.application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 end
+

@@ -24,7 +24,7 @@ Rails.application.configure do
   # config.log_level = :debug
 
   # Use a different logger for distributed setups
-  config.logger = SyslogLogger.new 'gnup_p'
+  config.logger = SyslogLogger.new '_p'
 
   # Use a different cache store in production
   # config.cache_store = :mem_cache_store

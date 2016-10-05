@@ -1,5 +1,31 @@
-<h1>Bem vindo ao novo Sistema :)</h1>
-<h2>Você já está logado no portal.</h2>
-<p>usuario_corrente.iduff #=> <%= usuario_corrente.iduff%></p>
-<p>usuario_corrente.ip #=> <%= usuario_corrente.ip%></p>
-<p>usuario_logado? #=> <%= usuario_logado? %></p>
+<div class="col-sm-2">
+  <div class="btn-group-vertical" role="group" aria-label="...">
+    <%= link_to 'Followers', account_followers_path, class: 'btn btn-primary' %>
+    <%= link_to 'Following', account_followings_path, class: 'btn btn-primary' %>
+    <%= link_to 'My Profile', user_path(current_user), class: 'btn btn-default' %>
+    <%= link_to 'Publish New Tweet', new_tweet_path, class: 'btn btn-success' %>
+    <%= link_to notifications_path, class: 'btn btn-primary' do %>
+        Notifications <%= content_tag :span, current_user.notifications.unseen.count, class: 'badge' %>
+    <% end %>
+  </div>
+</div>
+
+<div class="col-sm-10">
+  <div class="page-header">
+    <h1>My Timeline</h1>
+  </div>
+  <% if @tweets.any? %>
+      <table class="table">
+        <%= paginate @tweets %>
+        <% @tweets.each do |tweet| %>
+            <tr>
+              <td><b><%= tweet.user.name %></b></td>
+              <td><%= tweet.text %></td>
+              <td><%= tweet.created_at.to_date %></td>
+            </tr>
+        <% end %>
+      </table>
+  <% else %>
+      <p>Your friends are not tweeting :(</p>
+  <% end %>
+</div>

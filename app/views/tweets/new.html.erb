@@ -1,0 +1,12 @@
+<div class="page-header">
+  <h1>What are you thinking?</h1>
+</div>
+
+<%= form_for :tweet, url: tweets_path do |f| %>
+    <p>
+      <%= f.text_area :text %>
+    </p>
+    <p>
+      <%= f.submit "Tweet" %>
+    </p>
+<% end %>

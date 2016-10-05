@@ -1,0 +1,16 @@
+<div class="col-sm-5">
+  <h1>Who is Following You</h1>
+  <div class="list-group">
+    <table class="table table-striped">
+      <% @follows.each do |follow| %>
+          <% follower = follow.follower %>
+          <tr>
+            <td><%= link_to follower.name, user_path(follower), class: 'list-group-item' %></td>
+            <td><%= button_to 'Remove follower!', account_follower_path(follow),
+                            method: :delete,
+                            data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %></td>
+          </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

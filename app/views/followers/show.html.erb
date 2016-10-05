@@ -1,0 +1,10 @@
+<div class="col-sm-5">
+  <h1>Who is Following <%= @user.name %></h1>
+  <div class="list-group">
+    <% @followers.each do |follower| %>
+        <tr>
+          <%= link_to follower.name, user_path(follower), class: 'list-group-item' %>
+        </tr>
+    <% end %>
+  </div>
+</div>

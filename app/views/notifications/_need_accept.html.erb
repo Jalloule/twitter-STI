@@ -1,0 +1,3 @@
+<p>Yay! <%= notification.follower_name %> wants to follow you. Do you accept it?</p>
+<%= button_to 'Yes', account_follower_path(notification.follow), method: :put, class: 'btn btn-success' %>
+<%= button_to 'No', account_follower_path(notification.follow), method: :delete, class: 'btn btn-danger' %>

@@ -1,0 +1,12 @@
+<div class="col-sm-5">
+  <h1>Who is being Followed by <%= @user.name %></h1>
+  <div class="list-group">
+    <table class="table table-striped">
+      <% @following.each do |followed| %>
+          <tr>
+            <%= link_to followed.name, user_path(followed), class: 'list-group-item' %>
+          </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.1.5'
 
-gem 'portal-sso', '3.0.1', source: 'https://XXXXXXXX:XXXXXXXX@sistemas.uff.br/sti/gemserver/'
+gem 'devise'
 
 gem 'rails', '4.2.6'
 gem 'rake', '10.5.0'
@@ -15,10 +15,12 @@ gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier'
 gem 'normalize-rails'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+gem 'kaminari'
 
 # Chose which database you wish to use
-# gem 'sqlite3'
-gem 'mysql2'
+gem 'sqlite3'
 
 gem 'jquery-turbolinks'
 gem 'exception_notification', '4.1.3'
@@ -59,6 +61,7 @@ end
 
 group :test do
   gem 'shoulda-matchers', '2.8.0', require: false
+  gem 'shoulda-callback-matchers', '~> 1.1.1'
   gem 'simplecov', '0.10.0', require: false
   # Para testes de email
   gem 'email_spec', '1.6.0'
